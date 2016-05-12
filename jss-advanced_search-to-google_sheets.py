@@ -8,25 +8,25 @@
 # Please fill out the variables below
 
 # Variables
-workbook_key = ""
-worksheet_name = ""
+workbook_key = "1uKzSxzKDIEpCMLaVoVIuIn17ChQuSv0I4AXDv8rr7bM"
+worksheet_name = "Sheet1"
 
 # Oauth
-google_api_user = ''
-google_user = ''
+google_api_user = 'jssapi@jsstalkingmoosenet.iam.gserviceaccount.com'
+google_user = 'talkingmoose@gmail.com'
 
 # JSS Authentication
-jss_host = "" # Include http:// or https:// leave off port number Example: https://your.jss.com
+jss_host = "https://jss.talkingmoose.net" # Include http:// or https:// leave off port number Example: https://your.jss.com
 jss_port = "8443" # Port number
 jss_path = "" # Context -- if you need it: Enter it with a forward slash. Example: If your JSS is https://your.jss.com:8443/dev you would enter /dev
-jss_username = "" # Setup a user with API rights to read Advanced Computer and Mobile Reports as well as Computers and Mobile Devices
-jss_password = "" # Password
+jss_username = "API" # Setup a user with API rights to read Advanced Computer and Mobile Reports as well as Computers and Mobile Devices
+jss_password = "CHANGEME" # Password
 
 # Advanced search ID and Type
-as_id = ""
+as_id = "1"
 
 # Advanced search ID Type -- Uncomment one
-#as_type = "Computer"
+as_type = "Computer"
 #as_type = "Mobile"
 
 ################################################################
@@ -93,7 +93,8 @@ def oauthSheets():
 	storage = Storage(SITE_ROOT + '/data/sheets.dat')
 	credentials = storage.get()
 	if credentials is None or credentials.invalid:
-		credentials = SignedJwtAssertionCredentials(google_api_user, key, scope='https://spreadsheets.google.com/feeds/',sub=google_user)
+#		credentials = SignedJwtAssertionCredentials(google_api_user, key, scope='https://spreadsheets.google.com/feeds/',sub=google_user)
+		credentials = SignedJwtAssertionCredentials(google_api_user, key, scope='https://spreadsheets.google.com/feeds/')
 		storage.put(credentials)
 	else:
 		credentials.refresh(http)

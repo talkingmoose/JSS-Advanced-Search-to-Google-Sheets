@@ -3,3 +3,7 @@ include
 pip*
 lib
 .Python
+
+data/sheets.dat
+
+data/key/sheets.p12

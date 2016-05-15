@@ -66,13 +66,16 @@ Looks like this: 1pasdfsBr_8a3anlLDIdiSLENlsdnOK9s7bJqhdGow<br>
 Create an advanced search as desired, find the id (found in the URL)<br>
 
 ## Get the script
-Download this project<br>
-Create a folder next to the script called data<br>
-Create a folder inside data called key<br>
-Put your .p12 key into the key folder and call it sheets.p12<br>
-Open your favorite terminal<br>
-cd into project folder
-Run: ```sudo pip install -r requirements.txt```
+1. Download this project.
+2. Inside the project folder, create a folder next to the script called **data**.
+3. Create a folder inside **data** called **key**.
+4. Put your .p12 key file into the **key** folder and rename it **sheets.p12**.
+5. Open your favorite terminal.
+6. Run `cd /path/to/folder/JSS-Advanced-Search-to-Google-Sheets` to change directory into project folder.
+7. Run `sudo -H pip install --ignore-installed -r requirements.txt`.  
+(If pip is not installed, run `sudo easy_install pip` first.)
+8. Run `echo 'export PYTHONPATH="/Library/Python/2.7/site-packages"'`.
+9. Run `source ~/.bash_profile`.
 
 ## Lets set the variables
 Set workbook key<br>
